@@ -28,4 +28,25 @@ maxNum.textContent = max;
 // Listen for guess
 guessBtn.addEventListener('click', function() {
     let guess = parseInt(guessInput.value);
+    console.log(guess);
+
+    if (isNaN(guess) || guess < min || guess > max) {
+        setMessage(`please enter a number between ${min} and ${max}`, 'red');
+    }
+
+    // Check if won
+    if (guess === winningNum) {
+        //Disable Input
+        guessInput.disabled = true;
+        // change border color
+        guessInput.style.borderColor = 'green';
+
+        setMessage(`${winningNum} is correct, you Win!`, 'green');
+    } else {
+    }
 });
+
+function setMessage(msg, color) {
+    message.style.color = color;
+    message.textContent = msg;
+}
