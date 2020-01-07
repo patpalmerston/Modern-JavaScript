@@ -73,29 +73,58 @@
 
 // console.log(customer2.greeting());
 
-const personPrototypes = {
-    greeting: function() {
-        return `Hello there ${this.firstName} ${this.lastName}`;
-    },
-    getsMarried: function(newLastName) {
-        this.lastName = newLastName;
+// const personPrototypes = {
+//     greeting: function() {
+//         return `Hello there ${this.firstName} ${this.lastName}`;
+//     },
+//     getsMarried: function(newLastName) {
+//         this.lastName = newLastName;
+//     }
+// };
+
+// const mary = Object.create(personPrototypes);
+// mary.firstName = 'Mary';
+// mary.lastName = 'Williams';
+// mary.age = 30;
+
+// mary.getsMarried('Thomson');
+
+// console.log(mary.greeting());
+
+// const brad = Object.create(personPrototypes, {
+//     firstName: { value: 'Brad' },
+//     lastName: { value: 'Traversy' },
+//     age: { value: 36 }
+// });
+
+// console.log(brad);
+// console.log(brad.greeting());
+
+class Person {
+    constructor(firstName, lastName, dob) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
-};
+    greeting() {
+        return `Hello ${this.firstName} ${this.lastName}`;
+    }
 
-const mary = Object.create(personPrototypes);
-mary.firstName = 'Mary';
-mary.lastName = 'Williams';
-mary.age = 30;
+    calculateAge() {
+        const diff = Date.now() - this.birthday.getTime();
+        const ageDate = new Date(diff);
+        return Math.abs(ageDate.getUTCFullYear() - 1970);
+    }
 
-mary.getsMarried('Thomson');
+    getsMarried(newName) {
+        this.lastName = newName;
+    }
 
+    static addNumbers(x, y) {
+        return x + y;
+    }
+}
+
+const mary = new Person('mary', 'scary', '03-23-1980');
+mary.getsMarried('yup');
+console.log(mary);
 console.log(mary.greeting());
-
-const brad = Object.create(personPrototypes, {
-    firstName: { value: 'Brad' },
-    lastName: { value: 'Traversy' },
-    age: { value: 36 }
-});
-
-console.log(brad);
-console.log(brad.greeting());
