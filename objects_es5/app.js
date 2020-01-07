@@ -100,31 +100,60 @@
 // console.log(brad);
 // console.log(brad.greeting());
 
+// class Person {
+//     constructor(firstName, lastName, dob) {
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//     }
+//     greeting() {
+//         return `Hello ${this.firstName} ${this.lastName}`;
+//     }
+
+//     calculateAge() {
+//         const diff = Date.now() - this.birthday.getTime();
+//         const ageDate = new Date(diff);
+//         return Math.abs(ageDate.getUTCFullYear() - 1970);
+//     }
+
+//     getsMarried(newName) {
+//         this.lastName = newName;
+//     }
+
+//     static addNumbers(x, y) {
+//         return x + y;
+//     }
+// }
+
+// const mary = new Person('mary', 'scary', '03-23-1980');
+// mary.getsMarried('yup');
+// console.log(mary);
+// console.log(mary.greeting());
+
 class Person {
-    constructor(firstName, lastName, dob) {
+    constructor(firstName, lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
     greeting() {
-        return `Hello ${this.firstName} ${this.lastName}`;
-    }
-
-    calculateAge() {
-        const diff = Date.now() - this.birthday.getTime();
-        const ageDate = new Date(diff);
-        return Math.abs(ageDate.getUTCFullYear() - 1970);
-    }
-
-    getsMarried(newName) {
-        this.lastName = newName;
-    }
-
-    static addNumbers(x, y) {
-        return x + y;
+        return `hello there ${this.firstName} ${this.lastName}`;
     }
 }
 
-const mary = new Person('mary', 'scary', '03-23-1980');
-mary.getsMarried('yup');
-console.log(mary);
-console.log(mary.greeting());
+class Customer extends Person {
+    constructor(firstName, lastName, phone, membership) {
+        super(firstName, lastName);
+        this.phone = phone;
+        this.membership = membership;
+    }
+
+    static getMembershipCost() {
+        return 500;
+    }
+}
+
+const john = new Customer('john', 'doe', '111-111-1111', 'standard');
+
+console.log(john);
+console.log(john.greeting());
+console.log(Customer.getMembershipCost());
