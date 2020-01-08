@@ -69,11 +69,12 @@ document.getElementById('book-form').addEventListener('submit', function(e) {
         // Error alert
         ui.showAlert('Please fill in all fields', 'error');
     } else {
-        // Clear fields
-        ui.clearFields();
-
         // Add book to list
         ui.addBookToList(book);
+        // Show success
+        ui.showAlert('Book Added!', 'success');
+        // Clear fields
+        ui.clearFields();
     }
 
     e.preventDefault();
