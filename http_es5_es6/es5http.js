@@ -1,3 +1,13 @@
+//AJAX XHR Callbacks es5 prototypes
+/*
+EasyHTTP Library
+Library for making HTTP requests
+
+@Version 1.0.0
+@author Pat Palmerston
+
+*/
+
 function easyHttP() {
     this.http = new XMLHttpRequest();
 }
