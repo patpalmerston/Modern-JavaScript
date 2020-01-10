@@ -7,12 +7,22 @@ const http = new EasyHttP();
 
 // User Data
 const post = {
-    name: 'john doe',
-    username: 'johndoe',
-    email: 'john@gmail.com'
+    name: 'pt palmerston',
+    username: 'patpalmerston',
+    email: 'patpalmerston@gmail.com'
 };
 
 // create post
-http.post('https://jsonplaceholder.typicode.com/users', post)
+// http.post('https://jsonplaceholder.typicode.com/users', post)
+//     .then(data => console.log(data))
+//     .catch(err => console.log(err));
+
+// update post
+// http.put('https://jsonplaceholder.typicode.com/users/2', post)
+//     .then(data => console.log(data))
+//     .catch(err => console.log(err));
+
+// delete user
+http.delete('https://jsonplaceholder.typicode.com/users/1')
     .then(data => console.log(data))
     .catch(err => console.log(err));
