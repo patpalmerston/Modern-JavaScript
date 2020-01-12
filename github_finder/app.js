@@ -1,6 +1,8 @@
 // GitHub is a class so we need to instantiate it by declaring a variable equal to a new GitHub
 // INit Github
 const github = new Github();
+// INit UI
+const ui = new UI();
 
 // Search input
 const searchUser = document.getElementById('searchUser');
@@ -18,6 +20,7 @@ searchUser.addEventListener('keyup', e => {
                 // Show alert
             } else {
                 // or show the profile
+                ui.showProfile(data.profile);
             }
         });
     } else {
