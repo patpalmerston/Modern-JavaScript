@@ -7,7 +7,7 @@ class Github {
     async getUser(user) {
         // dynamically find the user variable in the request. the "?" makes a query to the client id, ampersand to add a query string of the client secret
         const profileResponse = await fetch(
-            `https://api.github.com/users/${user}?client_id=${this.client_id}&client_secret${this.client_secret}`
+            `https://api.github.com/users/${user}?client_id=${this.client_id}&client_secret=${this.client_secret}`
         );
 
         // gives us the json data, data needs to json always

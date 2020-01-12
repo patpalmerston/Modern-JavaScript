@@ -3,6 +3,7 @@ class UI {
         this.profile = document.getElementById('profile');
     }
 
+    // display profile in UI
     showProfile(user) {
         // bootstrap class names for border, padding, drop shadow and mb is for margin, also using the grid system with the row class. md is tells us how many columns were gonna get
         this.profile.innerHTML = `
@@ -32,7 +33,36 @@ class UI {
           <div id="repos"></div>
         `;
     }
+    //show alert message
+    showAlert(message, className) {
+        // Clear any remaining alerts
+        this.clearAlert();
+        // create div
+        const div = document.createElement('div');
+        // Add classes
+        div.className = className;
+        // add text
+        div.appendChild(document.createTextNode(message));
+        // Get parent
+        const container = document.querySelector('.searchContainer');
+        // Get search box
+        const search = document.querySelector('.search');
+        // Insert Alert
+        container.insertBefore(div, search);
 
+        // Timeout after 3 seconds
+        setTimeout(() => {
+            this.clearAlert();
+        }, 3000);
+    }
+    // clear alert message
+    clearAlert() {
+        const currentAlert = document.querySelector('.alert');
+        if (currentAlert) {
+            currentAlert.remove();
+        }
+    }
+    // clear profile
     clearProfile() {
         this.profile.innerHTML = '';
     }
