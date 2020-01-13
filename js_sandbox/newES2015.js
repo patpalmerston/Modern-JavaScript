@@ -54,3 +54,33 @@
 // console.log(gen.next().value);
 // console.log(gen.next().value);
 // a generator could continual create ids
+
+// Create a symbol - no two symbols can be the same
+// const sym1 = Symbol(); // is a primitive value not a new constructor
+// const sym2 = Symbol('sym2'); // add a value to symbol
+
+// console.log(Symbol('3e') === Symbol('3e')); // is false because no two symbols can be the same
+// console.log(typeof sym2);
+
+// Unique Object keys
+const KEY1 = Symbol();
+const KEY2 = Symbol('sym2');
+
+const myObj = {};
+
+myObj[KEY1] = 'prop1';
+myObj[KEY2] = 'prop2';
+myObj.key3 = 'prop3';
+myObj.key4 = 'Prop4';
+
+console.log(myObj[KEY1]);
+console.log(myObj[KEY2]);
+
+// Symbols are not enumerable in for...in loop (the symbols dont show up)
+for (let i in myObj) {
+    console.log(`${i}: ${myObj[i]}`);
+}
+
+// symbols are ignored in JSON.stringify
+console.log(JSON.stringify({ key: 'prop' })); // logged as a sting
+console.log(JSON.stringify({ [Symbol('sym1')]: 'prop' })); // logged as a sting
