@@ -30,8 +30,23 @@ re = /Hel{2,}o/i; // Must occur atleast {m,} (the 'l' happens atleast(a min of) 
 // Parentheses () - grouping
 re = /^([0-9]x){3}$/; // any number between '0-9' with the letter 'x' attatched '2x2x2x'. The parens group the 3x together and the {} tell us how many times. The Ceret and money sign makes sure it begins then ends after the 3rd time.
 
+// Shorthand Character Classes
+re = /\w/; // word character = alphanumerical ( any letter or number and or _)
+re = /\w+/; //  + = one or more word characters
+re = /\W/; // any none word character ( anything but)
+re = /\d/; // Match any digit
+re = /\d+/; // Match any digit consecutively
+re = /\D/; // any non digit character
+re = /\s/; // match whitespace char
+re = /\S/; // match any nonwhite space character
+re = /Hell\b/i; // word boundary - will find the actually word 'hell', not the letters found inside a word, but the word itself
+
+// Assertions
+re = /x(?=y)/; // match 'x' only if it is followed by 'y'
+re = /x(?!y)/; // match 'x' only if it is NOT followed by 'y'
+
 // string to match
-const str = '2x2x2x';
+const str = 'a';
 // Log results
 const result = re.exec(str);
 console.log('result', result);
