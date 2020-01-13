@@ -50,6 +50,6 @@ const person = {
 // person.sayHello();
 
 // New ES6 Destructuring
-const { name, age, city, sayHello } = person;
-console.log(name, age, city);
-sayHello();
+// const { name, age, city, sayHello } = person;
+// console.log(name, age, city);
+// sayHello();
