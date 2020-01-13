@@ -31,16 +31,18 @@ function validateZip() {
     }
 }
 
-// function validateEmail() {
-//   const email = document.getElementById('email');
-//   const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+function validateEmail() {
+    const email = document.getElementById('email');
+    // an email example 'pat123@gmail.com'
+    // start with a group () of characters [] that can be 'a-z', 'A-Z', '0-9',"_", '-', '.' and also search for more than one '+'. Then we want a literal '@' sign so we take it out of the group. then we need another group with the same parameters. Then a literal '.' and to ge that we need to escape it. Next we need the .'com' so we search for lower and upppercase from a-z with a quantifier for 2-5 characters. .me, .com, .media all should work
+    const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 
-//   if(!re.test(email.value)){
-//     email.classList.add('is-invalid');
-//   } else {
-//     email.classList.remove('is-invalid');
-//   }
-// }
+    if (!re.test(email.value)) {
+        email.classList.add('is-invalid');
+    } else {
+        email.classList.remove('is-invalid');
+    }
+}
 
 // function validatePhone() {
 //   const phone = document.getElementById('phone');
