@@ -10,7 +10,7 @@ re = /^hello$/i; // must begin and end with
 re = /^h.llo$/i; // '.' matches any ONE character / str = 'h3llo' = true
 re = /^h*llo$/i; // '*' Matches any character 0 or more times
 re = /gre?a?y/i; // '?' makes the a and e optional, sometimes grey is spelt gray
-re = /gre?a?y\?/i; // Escape character - use the '?' as a question mark
+re = /gre?a?y\?/i; // Escape character - use the '?' as a question mark with back slash
 
 // string to match
 const str = 'grey?';
