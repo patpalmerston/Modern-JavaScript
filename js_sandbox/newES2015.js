@@ -40,16 +40,17 @@
 // console.log(name.next().value);
 
 // ID Creator
-function* createIds() {
-    let index = 0;
+// function* createIds() {
+//     let index = 0;
 
-    // while true we want to yield the index value iterated by one
-    while (true) {
-        yield index++;
-    }
-}
+//     // while true we want to yield the index value iterated by one
+//     while (true) {
+//         yield index++;
+//     }
+// }
 
-const gen = createIds();
-console.log(gen.next().value);
-console.log(gen.next().value);
-console.log(gen.next().value);
+// const gen = createIds();
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+// a generator could continual create ids
