@@ -44,13 +44,15 @@ function validateEmail() {
     }
 }
 
-// function validatePhone() {
-//   const phone = document.getElementById('phone');
-//   const re = /^\(?\d{3}\)?[-. ]?\d{3}[-. ]?\d{4}$/;
+function validatePhone() {
+    // get the value of phone
+    const phone = document.getElementById('phone');
+    // We need literal parentheses so we need to escape them so they are not seen as a group '\(', and they need to be optional so we use a '?'. Then we need three digits '\d{3}'. then escape another optional literal parentheses '\)?' and then we need to separate with an optional literal dash, dot or space '[-. ]?' and then a set of three digits '\d{3}', and another optional spacing of dash, dot or space '[-. ]?', Then we need four more digits '\d{4}' and to end expression '$'
+    const re = /^\(?\d{3}\)?[-. ]?\d{3}[-. ]?\d{4}$/;
 
-//   if(!re.test(phone.value)){
-//     phone.classList.add('is-invalid');
-//   } else {
-//     phone.classList.remove('is-invalid');
-//   }
-// }
+    if (!re.test(phone.value)) {
+        phone.classList.add('is-invalid');
+    } else {
+        phone.classList.remove('is-invalid');
+    }
+}
