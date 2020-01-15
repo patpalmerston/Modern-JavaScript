@@ -1,6 +1,7 @@
 const PageState = function() {
     let currentState = new homeState(this);
 
+    // loads the home state
     this.init = function() {
         this.change(new homeState());
     };
@@ -10,6 +11,7 @@ const PageState = function() {
     };
 };
 
+// Create the different states and what we want to happen inside of them
 // Home State
 const homeState = function(page) {
     document.querySelector('#heading').textContent = null;
