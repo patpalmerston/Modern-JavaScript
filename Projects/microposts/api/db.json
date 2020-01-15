@@ -1,19 +1,44 @@
 {
-    "posts": [
-        {
-            "id": 1,
-            "title": "Post One",
-            "body": "This is post one"
-        },
-        {
-            "id": 2,
-            "title": "Post two",
-            "body": "This is post two"
-        },
-        {
-            "id": 3,
-            "title": "Post three",
-            "body": "This is post three"
-        }
-    ]
+  "posts": [
+    {
+      "id": 1,
+      "title": "Post One",
+      "body": "This is post one"
+    },
+    {
+      "id": 2,
+      "title": "Post two",
+      "body": "This is post two"
+    },
+    {
+      "id": 3,
+      "title": "Post three",
+      "body": "This is post three"
+    },
+    {
+      "title": "post 4",
+      "body": {},
+      "id": 4
+    },
+    {
+      "title": "post 5",
+      "body": "this is post 5",
+      "id": 5
+    },
+    {
+      "title": "post 6",
+      "body": "this is post 6\n",
+      "id": 6
+    },
+    {
+      "title": "post 6",
+      "body": "this is post 6\n",
+      "id": 7
+    },
+    {
+      "title": "book",
+      "body": "sdf",
+      "id": 8
+    }
+  ]
 }
